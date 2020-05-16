@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature name="BookManagement"/>
+	<feature name="GUI"/>
+	<feature name="LocalManagement"/>
+	<feature name="Attribute"/>
+	<feature name="Name"/>
+	<feature name="Price"/>
+	<feature name="LendingPeriod"/>
+	<feature name="Amount"/>
+	<feature name="Bookmark"/>
+	<feature name="Genre"/>
+	<feature name="Rating"/>
+	<feature name="OrderManagement"/>
+	<feature name="CurrentOrders"/>
+	<feature name="OrderHistory"/>
+	<feature name="Marketing"/>
+	<feature name="SellManagement"/>
+	<feature name="SellHistory"/>
+	<feature name="LendManamement"/>
+	<feature name="CurretLend"/>
+	<feature name="LendHistory"/>
+	<feature name="Algorithmen"/>
+	<feature name="Filter"/>
+	<feature name="PriceFilter"/>
+	<feature name="LendingPeriodFilter"/>
+	<feature name="RatingFilter"/>
+	<feature name="LendTimeFilter"/>
+	<feature name="GenreFilter"/>
+	<feature name="Suche"/>
+	<feature name="NameSearch"/>
+	<feature name="ISBNSearch"/>
+	<feature name="BookValue"/>
+</configuration>

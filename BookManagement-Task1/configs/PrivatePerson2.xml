@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="BookManagement"/>
+	<feature automatic="selected" name="GUI"/>
+	<feature automatic="selected" name="LocalManagement"/>
+	<feature automatic="selected" name="Attribute"/>
+	<feature automatic="selected" name="Name"/>
+	<feature name="Price"/>
+	<feature automatic="selected" manual="selected" name="LendingPeriod"/>
+	<feature automatic="selected" name="Amount"/>
+	<feature name="Bookmark"/>
+	<feature name="Genre"/>
+	<feature manual="selected" name="Rating"/>
+	<feature name="OrderManagement"/>
+	<feature name="CurrentOrders"/>
+	<feature name="OrderHistory"/>
+	<feature automatic="selected" name="Marketing"/>
+	<feature automatic="unselected" name="SellManagement"/>
+	<feature automatic="unselected" name="SellHistory"/>
+	<feature automatic="selected" name="LendManamement"/>
+	<feature automatic="selected" manual="selected" name="CurretLend"/>
+	<feature manual="selected" name="LendHistory"/>
+	<feature automatic="selected" name="Algorithmen"/>
+	<feature automatic="selected" name="Filter"/>
+	<feature name="PriceFilter"/>
+	<feature manual="selected" name="LendingPeriodFilter"/>
+	<feature name="RatingFilter"/>
+	<feature manual="selected" name="LendTimeFilter"/>
+	<feature name="GenreFilter"/>
+	<feature automatic="selected" name="Suche"/>
+	<feature manual="selected" name="NameSearch"/>
+	<feature name="ISBNSearch"/>
+	<feature name="BookValue"/>
+</configuration>

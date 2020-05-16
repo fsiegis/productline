@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="BookManagement">
+			<feature mandatory="true" name="GUI">
+				<description>Eine graphische Oberfläche ermöglicht die Interaktion mit dem Programm.</description>
+			</feature>
+			<and abstract="true" mandatory="true" name="LocalManagement">
+				<description>Das lokale Management ermöglicht die Verwaltung die vor Ort vorhandenen Bücher.</description>
+				<and abstract="true" mandatory="true" name="Attribute">
+					<description>Alle Bücher werden über verschiedene Attribute neben einer eindeutigen ID beschrieben.</description>
+					<feature mandatory="true" name="Name">
+						<description>Neben der eindeutigen ID (z.b. ISBN) ist der Name für Nutzer*innen die wichtigste Identifikationsmöglichkeit.</description>
+					</feature>
+					<feature name="Price">
+						<description>
+							Der Preis spielt beim Kauf/Verkauf eine wesentliche Rolle.
+							Bei einer Privaten Bücherverwaltung oder einem Bücherverlei ist der Preis möglicherweise unwichtig.
+						</description>
+					</feature>
+					<feature name="LendingPeriod">
+						<description>
+							Beim verleihen von Büchern einer Bibliothek gibt es für verschiedene Bücher verschiedene Ausleizeiten.
+							Auch beim Verleihen von privaten Büchern könnte dieses Attribut genutz werden.
+						</description>
+					</feature>
+					<feature name="Amount">
+						<description>Bei Buchläden oder Bücherein ist die Anzahl der vorhandenen Bücher wichtig und interagiert mit den Kauf/Verkauf/Verleih</description>
+					</feature>
+					<feature name="Bookmark">
+						<description>Lesezeichen für den persönlichen Lesevortschritt oder das Markieren wichtiger Abschnitte.</description>
+					</feature>
+					<feature name="Genre">
+						<description>Klassifizierung des Buches für eine Sortierung oder erstellung von Empfehlungen.</description>
+					</feature>
+					<feature name="Rating">
+						<description>Bewertung des Buches. Kann eine persönliche Erinnerung sein oder ein Empfehlungskriterum für Buchläden/Bücherein.</description>
+					</feature>
+				</and>
+			</and>
+			<and abstract="true" name="OrderManagement">
+				<description>Verwalten von Bestellungen von Büchern.</description>
+				<feature abstract="true" name="CurrentOrders">
+					<description>Derzeit ausstehende Bestellungen.</description>
+				</feature>
+				<feature abstract="true" name="OrderHistory">
+					<description>Bisherige Bestellungen, wichtige Informationsquelle zur Berechnung von Verkaufszahlen, der Preisentwicklung etc.</description>
+				</feature>
+			</and>
+			<alt abstract="true" name="Marketing">
+				<description>
+					Die Verwaltung zum Verkaufen/Verleihen von Büchern.
+					Annahme einer künstlichen Trennung von Bücherein (Vekauf) und Bibliotheken (Verleih).
+				</description>
+				<and abstract="true" name="SellManagement">
+					<description>Bücher können verkauft werden.</description>
+					<feature name="SellHistory">
+						<description>Übersicht bisher verkaufter Bücher.</description>
+					</feature>
+				</and>
+				<and abstract="true" name="LendManamement">
+					<description>Bücher können verliehen werden.</description>
+					<feature name="CurretLend">
+						<description>Aktuell verliehene Bücher.</description>
+					</feature>
+					<feature abstract="true" name="LendHistory">
+						<description>Übersicht bisher verliehener Bücher.</description>
+					</feature>
+				</and>
+			</alt>
+			<and abstract="true" name="Algorithmen">
+				<and abstract="true" name="Filter">
+					<description>
+						Alle Bücher nach bestimmten Attributen Filtern.
+					</description>
+					<feature name="PriceFilter">
+						<description>Filtern nach dem Preis.</description>
+					</feature>
+					<feature name="LendingPeriodFilter">
+						<description>Filtern nach möglicher Ausleihdauer.</description>
+					</feature>
+					<feature name="RatingFilter">
+						<description>Filtern nach der Bewertung.</description>
+					</feature>
+					<feature name="LendTimeFilter">
+						<description>Filtern nach aktueller Ausleidauer.</description>
+					</feature>
+					<feature name="GenreFilter">
+						<description>Filtern nach den Genre.</description>
+					</feature>
+				</and>
+				<and abstract="true" name="Suche">
+					<description>Nach Büchern mit spezifischem Attribut suchen.</description>
+					<feature name="NameSearch">
+						<description>Suche ein Buch nach dem Namen.</description>
+					</feature>
+					<feature name="ISBNSearch">
+						<description>Suche Buch nach der ISBN.</description>
+					</feature>
+				</and>
+				<feature name="BookValue">
+					<description>Berechnet den summierten Wert aller lokalen Bücher.</description>
+				</feature>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>LendingPeriodFilter</var>
+				<var>LendingPeriod</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>PriceFilter</var>
+				<var>Price</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>RatingFilter</var>
+				<var>Rating</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>LendTimeFilter</var>
+				<var>CurretLend</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>GenreFilter</var>
+				<var>Genre</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>BookValue</var>
+				<var>Price</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SellHistory</var>
+				<var>SellManagement</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SellManagement</var>
+				<var>Amount</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>LendManamement</var>
+				<var>Amount</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
