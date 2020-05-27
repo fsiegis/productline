@@ -2,9 +2,8 @@ package runtimeVar;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
+import properties.PropertyManager;
 
-import runtimeVar.ControlPanel;
 
 public class GUI extends JFrame
 {
@@ -13,8 +12,13 @@ public class GUI extends JFrame
 	Book[] books = new Book[0];
 	int bookPointer = 0;
 	
-	JList bookList;
-	DefaultListModel model;
+	JList<Book> bookList;
+	DefaultListModel<Book> model;
+	
+	JLabel title;
+	JLabel headline;
+	Font head = new Font("Verdana", Font.BOLD, 20);
+	Font tabHead = new Font("Verdana", Font.BOLD, 12);
 	
 	Algorithms sorter;
 	
@@ -22,24 +26,33 @@ public class GUI extends JFrame
 	{
 		control = new ControlPanel(this);
 		sorter = new Algorithms();
-//		//Book Klasse
-//		books[0] = new Book("Steppenwolf");
-//		books[1] = new Book("Leere Herzen");
-//		
-//		//Array
-//		BookNames[0] = new String("Steppenwolf");
-//		BookNames[1] = new String("Leere Herzen");
-
-		model = new DefaultListModel();
 		
-		//addBook(new Book("Test Buch", 0.0));
-		
-		bookList = new JList(model); 
-		
+		//Setze Titel & Layout
+		this.setTitle("Book Management");
 		setLayout(new BorderLayout());
-		add(control, BorderLayout.SOUTH);
+		
+		//Setze Tabellenüberschrift
+		headline = new JLabel();
+		headline.setBackground(Color.WHITE);
+		headline.setFont(tabHead);
+		headline.setOpaque(true);
+		if(PropertyManager.getProperty("Price"))
+	    {	
+			headline.setText("Name    Preis [€]");	
+	    }
+		else
+		{
+			headline.setText("Name");
+		}
+		add(headline, BorderLayout.NORTH);
+		
+		//Setze Bücherliste
+		model = new DefaultListModel<Book>();
+		bookList = new JList<Book>(model); 
 		add(bookList, BorderLayout.CENTER);
 		
+		//Setze Controllpanel
+		add(control, BorderLayout.SOUTH);
 		
 		setLocation(50,0);
         setSize(600,500);
@@ -49,9 +62,6 @@ public class GUI extends JFrame
 	
 	public void addBook(Book newBook)
 	{
-		//books[bookPointer] = newBook;
-		//model.add(bookPointer, newBook);
-		//bookPointer++;
 		Book[] newBookArray = new Book[this.books.length + 1];
 		for(int i = 0; i < this.books.length; i++)
 		{

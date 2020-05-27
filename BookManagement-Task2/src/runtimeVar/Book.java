@@ -53,7 +53,7 @@ public class Book implements Comparable<Book>
 		String bookString;
 		if(PropertyManager.getProperty("Price"))
 		{
-			bookString = this.name + " " + Double.toString(this.price);
+			bookString = this.name + "    " + Double.toString(this.price);
 		}
 		else
 		{

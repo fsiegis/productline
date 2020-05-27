@@ -6,12 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import properties.PropertyManager;
-import runtimeVar.ControlPanel.ButtonListener;
-import runtimeVar.GUI;
 
 
-public class NewBookPanel extends JFrame{
-	
+public class NewBookPanel extends JFrame
+{
 	JPanel bookPanel;
 	JPanel savePanel;
 	JTextField newBookName;
@@ -24,8 +22,13 @@ public class NewBookPanel extends JFrame{
 	public NewBookPanel(runtimeVar.GUI controlGUI)
 	{
 		this.controlGUI = controlGUI;
+		
+		//Setze Titel
+		this.setTitle("New Book");
+		
 		bookPanel = new JPanel();
 		savePanel = new JPanel();
+		
 		
 		JLabel NameLabel = new JLabel("Name:");
 		newBookName = new JTextField("Name des neuen Buchens", 15);

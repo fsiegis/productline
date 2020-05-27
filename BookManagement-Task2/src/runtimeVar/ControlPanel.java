@@ -5,8 +5,6 @@ import properties.PropertyManager;
 
 import java.awt.*;
 import java.awt.event.*;
-import runtimeVar.NewBookPanel;
-import runtimeVar.GUI;
 
 public class ControlPanel extends JPanel
 {
