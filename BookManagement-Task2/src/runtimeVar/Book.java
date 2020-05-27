@@ -1,8 +1,4 @@
 package runtimeVar;
-import java.io.IOException;
-import properties.PropertyManager;
-import java.io.IOException;
-import java.util.*;
 
 public class Book implements Comparable<Book>
 {
