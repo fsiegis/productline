@@ -17,8 +17,7 @@ public class GUI extends JFrame
 	
 	JLabel title;
 	JLabel headline;
-	Font head = new Font("Verdana", Font.BOLD, 20);
-	Font tabHead = new Font("Verdana", Font.BOLD, 12);
+	Font head = new Font("Verdana", Font.BOLD, 15);
 	
 	Algorithms sorter;
 	
@@ -31,10 +30,11 @@ public class GUI extends JFrame
 		this.setTitle("Book Management");
 		setLayout(new BorderLayout());
 		
+		
 		//Setze Tabellenüberschrift
 		headline = new JLabel();
 		headline.setBackground(Color.WHITE);
-		headline.setFont(tabHead);
+		headline.setFont(head);
 		headline.setOpaque(true);
 		if(PropertyManager.getProperty("Price"))
 	    {	
@@ -71,6 +71,9 @@ public class GUI extends JFrame
 		
 		this.books = newBookArray;
 		this.model.addElement(newBook);
+		
+		newBook.setidx(bookPointer);
+		bookPointer++;
 	}
 	
 	public void sortBooks()
@@ -81,6 +84,11 @@ public class GUI extends JFrame
 		{
 			this.model.addElement(this.books[i]);
 		}
+	}
+	
+	public void getBookInfo()
+	{
+		new InfoPanel(bookList.getSelectedValue());
 	}
 	
 	public static void main(String[] args) {

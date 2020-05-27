@@ -2,6 +2,7 @@
 <configuration>
 	<feature automatic="selected" name="BookManagementTask2"/>
 	<feature automatic="selected" name="GUI"/>
+	<feature name="InfoPanel"/>
 	<feature automatic="selected" name="LocalManagement"/>
 	<feature automatic="selected" name="Attribute"/>
 	<feature manual="selected" name="Name"/>
