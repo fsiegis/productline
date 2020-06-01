@@ -5,8 +5,8 @@
 	<feature name="InfoPanel"/>
 	<feature automatic="selected" name="LocalManagement"/>
 	<feature automatic="selected" name="Attribute"/>
-	<feature automatic="selected" manual="selected" name="Name"/>
-	<feature manual="selected" name="Price"/>
+	<feature automatic="selected" name="Name"/>
+	<feature name="Price"/>
 	<feature name="Algorithm"/>
 	<feature name="PriceSort"/>
 	<feature name="Marketing"/>

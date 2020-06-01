@@ -4,7 +4,7 @@
 	<feature automatic="selected" name="GUI"/>
 	<feature name="InfoPanel"/>
 	<feature automatic="selected" manual="selected" name="LocalManagement"/>
-	<feature manual="selected" name="Attribute"/>
+	<feature automatic="selected" manual="selected" name="Attribute"/>
 	<feature automatic="selected" name="Name"/>
 	<feature name="Price"/>
 	<feature name="Algorithm"/>

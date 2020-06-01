@@ -14,8 +14,8 @@
 			<and mandatory="true" name="GUI">
 				<feature name="InfoPanel"/>
 			</and>
-			<and abstract="true" name="LocalManagement">
-				<and abstract="true" name="Attribute">
+			<and abstract="true" mandatory="true" name="LocalManagement">
+				<and abstract="true" mandatory="true" name="Attribute">
 					<feature mandatory="true" name="Name"/>
 					<feature name="Price"/>
 				</and>
