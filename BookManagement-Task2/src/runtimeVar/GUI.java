@@ -55,7 +55,7 @@ public class GUI extends JFrame
 		add(control, BorderLayout.SOUTH);
 		
 		setLocation(50,0);
-        setSize(600,500);
+        setSize(700,600);
         setMinimumSize(new Dimension(300,250));
         setVisible(true);
 	}
@@ -89,6 +89,34 @@ public class GUI extends JFrame
 	public void getBookInfo()
 	{
 		new InfoPanel(bookList.getSelectedValue());
+	}
+	
+	public void lendBook()
+	{
+		Book oneBook = bookList.getSelectedValue();
+		if(oneBook.getislend() == true)
+		{
+			System.out.println("Fehler: Buch ist bereits verliehen");
+		}
+		else
+		{
+			oneBook.setislend(true);
+			System.out.println("Buch wurde als verliehen markiert");
+			
+		}
+	}
+	public void returnBook()
+	{
+		Book oneBook = bookList.getSelectedValue();
+		if(oneBook.getislend() == true)
+		{
+			oneBook.setislend(false);
+			System.out.println("Buch wurde als zurückgegeben merkiert");
+		}
+		else
+		{
+			System.out.println("Fehler: Buch ist nicht als verliehen markiert");
+		}
 	}
 	
 	public static void main(String[] args) {

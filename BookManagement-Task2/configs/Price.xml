@@ -9,4 +9,6 @@
 	<feature manual="selected" name="Price"/>
 	<feature name="Algorithm"/>
 	<feature name="PriceSort"/>
+	<feature name="Marketing"/>
+	<feature name="LendManagement"/>
 </configuration>

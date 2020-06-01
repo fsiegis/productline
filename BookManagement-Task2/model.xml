@@ -23,6 +23,9 @@
 			<and abstract="true" name="Algorithm">
 				<feature name="PriceSort"/>
 			</and>
+			<and abstract="true" name="Marketing">
+				<feature name="LendManagement"/>
+			</and>
 		</and>
 	</struct>
 	<constraints>

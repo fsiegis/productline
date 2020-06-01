@@ -2,6 +2,7 @@ package runtimeVar;
 
 import java.util.*;
 
+//Hallo
 //Klasse für alle folgenden Algorithmen
 public class Algorithms {
 	boolean direction = true;

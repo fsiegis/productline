@@ -7,6 +7,7 @@ public class Book implements Comparable<Book>
 	private double price = -1;
 	private String ISBN = "";
 	private int bookidx = -1;
+	private boolean islend = false;
 
 	public Book(String name)
 	{
@@ -50,6 +51,14 @@ public class Book implements Comparable<Book>
 	{
 		this.bookidx = idx;
 	}
+	public boolean getislend()
+	{
+		return this.islend;
+	}
+	public void setislend(boolean islend)
+	{
+		this.islend = islend;
+	}
 	
 	@Override
 	public int compareTo(Book compareBook) 
@@ -61,9 +70,17 @@ public class Book implements Comparable<Book>
  	public String toString()
 	{
 		String bookString;
-		if(PropertyManager.getProperty("Price"))
+		if(PropertyManager.getProperty("Price") && PropertyManager.getProperty("LendManagement"))
 		{
-			bookString = this.name + "    " + Double.toString(this.price);
+			bookString = this.name + "    Preis: " + Double.toString(this.price) + "    Buch ist verliehen: " + this.islend;
+		}
+		else if(PropertyManager.getProperty("LendManagement"))
+		{
+			bookString = this.name + "    Buch ist verliehen: " + this.islend;
+		}
+		else if(PropertyManager.getProperty("Price"))
+		{
+			bookString = this.name + "    Preis: " + Double.toString(this.price);
 		}
 		else
 		{

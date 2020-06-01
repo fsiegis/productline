@@ -7,6 +7,8 @@
 	<feature automatic="selected" name="Attribute"/>
 	<feature automatic="selected" manual="selected" name="Name"/>
 	<feature automatic="selected" manual="selected" name="Price"/>
-	<feature automatic="selected" manual="selected" name="Algorithm"/>
+	<feature automatic="selected" name="Algorithm"/>
 	<feature manual="selected" name="PriceSort"/>
+	<feature automatic="selected" name="Marketing"/>
+	<feature manual="selected" name="LendManagement"/>
 </configuration>

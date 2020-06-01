@@ -10,6 +10,8 @@ public class ControlPanel extends JPanel
 {
 	JButton newBook;
 	JButton bookInfo;
+	JButton lendBook;
+	JButton returnBook;
 	JButton priceSort;
 	ActionListener listener;
 	GUI controlGUI;
@@ -20,12 +22,16 @@ public class ControlPanel extends JPanel
 		newBook = new JButton("Neues Buch");
 		priceSort = new JButton("Sortieren");
 		bookInfo = new JButton("Info");
+		lendBook = new JButton("Buch verleihen");
+		returnBook = new JButton("Buch zurückgeben");
 		
 		
 		listener = new ButtonListener();
 		newBook.addActionListener(listener);
 		priceSort.addActionListener(listener);
 		bookInfo.addActionListener(listener);
+		lendBook.addActionListener(listener);
+		returnBook.addActionListener(listener);
 		
 		setLayout(new FlowLayout(FlowLayout.CENTER,20,20));
         setBackground(Color.WHITE);
@@ -35,6 +41,12 @@ public class ControlPanel extends JPanel
 	    {
         	add(bookInfo);
 	    }
+        if(PropertyManager.getProperty("LendManagement"))
+	    {
+        	add(lendBook);
+        	add(returnBook);
+	    }
+        
         if(PropertyManager.getProperty("PriceSort"))
 	    {
         	add(priceSort);
@@ -56,6 +68,14 @@ public class ControlPanel extends JPanel
             if(e.getSource() == bookInfo)
             {
             	controlGUI.getBookInfo();
+            }
+            if(e.getSource() == lendBook)
+            {
+            	controlGUI.lendBook();
+            }
+            if(e.getSource() == returnBook)
+            {
+            	controlGUI.returnBook();
             }
         }
     }

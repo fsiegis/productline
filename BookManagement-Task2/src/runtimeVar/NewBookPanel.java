@@ -53,7 +53,7 @@ public class NewBookPanel extends JFrame
 	    add(bookPanel, BorderLayout.CENTER);
 	    add(saveButton, BorderLayout.SOUTH);
 	    setLocation(50,0);
-        setSize(600,500);
+        setSize(700,600);
 	    setVisible(true);
 	}
 //	static void panalGenerator()

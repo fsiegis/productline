@@ -14,6 +14,7 @@ public class InfoPanel extends JFrame{
 	JLabel bookPrice;
 	JLabel bookISBN;
 	JLabel bookidx;
+	JLabel bookislend;
 	
 	JButton close;
 	ActionListener listener;
@@ -31,12 +32,17 @@ public class InfoPanel extends JFrame{
 		bookPrice = new JLabel("Preis: " + Double.toString(infoBook.getPrice()));
 		bookISBN = new JLabel("ISBN: " + infoBook.getISBN());
 		bookidx = new JLabel("Lokaler Index: " + Integer.toString(infoBook.getidx()));
+		bookislend = new JLabel("Das Buch ist derzeit verliehen: " + infoBook.getislend());
 		
 		infoPanel.add(bookidx);
 		infoPanel.add(bookName);
 		if(PropertyManager.getProperty("Price"))
 	    {
 			infoPanel.add(bookPrice);
+	    }
+		if(PropertyManager.getProperty("LendManagement"))
+	    {
+			infoPanel.add(bookislend);
 	    }
 		infoPanel.add(bookISBN);
 		
@@ -48,7 +54,7 @@ public class InfoPanel extends JFrame{
 	    
 		add(infoPanel, BorderLayout.CENTER);
 	    setLocation(50,0);
-        setSize(600,500);
+        setSize(700,600);
 	    setVisible(true);
 	}
 	
