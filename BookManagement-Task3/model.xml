@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="BookManagementTask3">
+			<and mandatory="true" name="GUI">
+				<feature name="InfoPanel"/>
+			</and>
+			<and abstract="true" mandatory="true" name="LocalManagement">
+				<and abstract="true" mandatory="true" name="Attribute">
+					<feature mandatory="true" name="Name"/>
+					<feature name="Price"/>
+				</and>
+			</and>
+			<and abstract="true" name="Algorithm">
+				<feature name="PriceSort"/>
+			</and>
+			<and abstract="true" name="Marketing">
+				<feature name="LendManagement"/>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>PriceSort</var>
+				<var>Price</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
