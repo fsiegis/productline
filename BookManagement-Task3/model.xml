@@ -10,7 +10,7 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<and abstract="true" mandatory="true" name="BookManagementTask3">
+		<and abstract="true" mandatory="true" name="Task3">
 			<and mandatory="true" name="GUI">
 				<feature name="InfoPanel"/>
 			</and>

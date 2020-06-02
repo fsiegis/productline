@@ -36,14 +36,14 @@ public class InfoPanel extends JFrame{
 		infoPanel.add(bookidx);
 		infoPanel.add(bookName);
 		// #if Price
-	    {
-			infoPanel.add(bookPrice);
-	    }
+//@	    {
+//@			infoPanel.add(bookPrice);
+//@	    }
 		// #endif
 		// #if LendManagement
-	    {
-			infoPanel.add(bookislend);
-	    }
+//@	    {
+//@			infoPanel.add(bookislend);
+//@	    }
 		// #endif
 		infoPanel.add(bookISBN);
 		

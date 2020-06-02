@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-	<feature automatic="selected" name="BookManagementTask3"/>
+	<feature automatic="selected" name="Task3"/>
 	<feature automatic="selected" name="GUI"/>
 	<feature manual="selected" name="InfoPanel"/>
 	<feature automatic="selected" name="LocalManagement"/>
 	<feature automatic="selected" name="Attribute"/>
 	<feature automatic="selected" name="Name"/>
-	<feature manual="selected" name="Price"/>
-	<feature name="Algorithm"/>
-	<feature name="PriceSort"/>
-	<feature name="Marketing"/>
-	<feature name="LendManagement"/>
+	<feature automatic="selected" manual="selected" name="Price"/>
+	<feature automatic="selected" name="Algorithm"/>
+	<feature manual="selected" name="PriceSort"/>
+	<feature automatic="selected" manual="selected" name="Marketing"/>
+	<feature manual="selected" name="LendManagement"/>
 </configuration>

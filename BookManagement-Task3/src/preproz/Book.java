@@ -70,9 +70,9 @@ public class Book implements Comparable<Book>
 	{
 		String bookString = "";
 		// #if Price && LendManagement
-		{
-			bookString = this.name + "    Preis: " + Double.toString(this.price) + "    Buch ist verliehen: " + this.islend;
-		}
+//@		{
+//@			bookString = this.name + "    Preis: " + Double.toString(this.price) + "    Buch ist verliehen: " + this.islend;
+//@		}
 		// #elif LendManagement && !Price
 //@		{
 //@			bookString = this.name + "    Buch ist verliehen: " + this.islend;
@@ -82,9 +82,9 @@ public class Book implements Comparable<Book>
 //@			bookString = this.name + "    Preis: " + Double.toString(this.price);
 //@		}
 		// #else
-//@		{
-//@			bookString = this.name;
-//@		}
+		{
+			bookString = this.name;
+		}
 		// #endif
         return bookString;
     }

@@ -36,13 +36,13 @@ public class GUI extends JFrame
 		headline.setFont(head);
 		headline.setOpaque(true);
 		// #if Price
-	    {	
-			headline.setText("Name    Preis [???]");	
-	    }
+//@	    {	
+//@			headline.setText("Name    Preis [???]");	
+//@	    }
 		// #else
-//@		{
-//@			headline.setText("Name");
-//@		}
+		{
+			headline.setText("Name");
+		}
 		// #endif
 		add(headline, BorderLayout.NORTH);
 		

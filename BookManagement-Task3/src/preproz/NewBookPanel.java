@@ -33,12 +33,12 @@ public class NewBookPanel extends JFrame
 		bookPanel.add(newBookName);
 	    
 	    // #if Price
-	    {
-	    	JLabel PriceLabel = new JLabel("Preis:");
-	    	newBookPrice = new JTextField("Preis des neuen Buchens", 15);
-	    	bookPanel.add(PriceLabel);
-	    	bookPanel.add(newBookPrice);
-	    }
+//@	    {
+//@	    	JLabel PriceLabel = new JLabel("Preis:");
+//@	    	newBookPrice = new JTextField("Preis des neuen Buchens", 15);
+//@	    	bookPanel.add(PriceLabel);
+//@	    	bookPanel.add(newBookPrice);
+//@	    }
 	    // #endif
 		
 	    saveButton = new JButton("Sichern");
@@ -71,17 +71,17 @@ public class NewBookPanel extends JFrame
             	try
             	{
             		// #if Price
-            		{
-	           				newBook = new preproz.Book(newBookName.getText(), Double.parseDouble(newBookPrice.getText()));
-	            			controlGUI.addBook(newBook);
-	                    	dispose();
-	            		}
+//@            		{
+//@	           				newBook = new preproz.Book(newBookName.getText(), Double.parseDouble(newBookPrice.getText()));
+//@	            			controlGUI.addBook(newBook);
+//@	                    	dispose();
+//@	            	}
             		// #else
-//@           		{
-//@            			newBook = new preproz.Book(newBookName.getText());
-//@                		controlGUI.addBook(newBook);
-//@                    	dispose();
-//@            		}
+           		{
+            			newBook = new preproz.Book(newBookName.getText());
+                		controlGUI.addBook(newBook);
+                    	dispose();
+            		}
             		// #endif
             		
             	}

@@ -21,7 +21,7 @@ public class ControlPanel extends JPanel
 		priceSort = new JButton("Sortieren");
 		bookInfo = new JButton("Info");
 		lendBook = new JButton("Buch verleihen");
-		returnBook = new JButton("Buch zur??ckgeben");
+		returnBook = new JButton("Buch zurückgeben");
 		
 		
 		listener = new ButtonListener();
@@ -36,16 +36,16 @@ public class ControlPanel extends JPanel
         
         add(newBook);
         // #if InfoPanel
-	    {
+//@	    {
 //@        	add(bookInfo);
-	    }
+//@	    }
         // #endif
         
         // #if LendManagement
-	    {
+//@	    {
 //@        	add(lendBook);
 //@        	add(returnBook);
-	    }
+//@	    }
         // #endif
         
         // #if PriceSort
