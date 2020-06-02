@@ -37,14 +37,14 @@ public class ControlPanel extends JPanel
         add(newBook);
         // #if InfoPanel
 	    {
-        	add(bookInfo);
+//@        	add(bookInfo);
 	    }
         // #endif
         
         // #if LendManagement
 	    {
-        	add(lendBook);
-        	add(returnBook);
+//@        	add(lendBook);
+//@        	add(returnBook);
 	    }
         // #endif
         
