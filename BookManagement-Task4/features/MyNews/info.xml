@@ -1,0 +1,5 @@
+<plugin>
+	<interface id="interfaces.INews">
+		<class>MyNews</class>
+	</interface>
+</plugin>

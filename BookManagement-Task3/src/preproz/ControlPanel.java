@@ -36,9 +36,9 @@ public class ControlPanel extends JPanel
         
         add(newBook);
         // #if InfoPanel
-//@	    {
-//@        	add(bookInfo);
-//@	    }
+	    {
+       	add(bookInfo);
+	    }
         // #endif
         
         // #if LendManagement
@@ -49,9 +49,9 @@ public class ControlPanel extends JPanel
         // #endif
         
         // #if PriceSort
-//@	    {
-//@        	add(priceSort);
-//@	    }
+	    {
+        	add(priceSort);
+	    }
         // #endif
 	}
 	
