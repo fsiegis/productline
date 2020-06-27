@@ -1,0 +1,5 @@
+<plugin>
+	<interface id="interfaces.IGUI">
+		<class>OtherGUI</class>
+	</interface>
+</plugin>

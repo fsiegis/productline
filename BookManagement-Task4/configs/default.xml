@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
 	<feature automatic="selected" name="BookManagementTask4"/>
-	<feature manual="selected" name="OneGUI"/>
-	<feature name="MyNews"/>
-	<feature manual="selected" name="YourNews"/>
+	<feature automatic="unselected" name="OneGUI"/>
+	<feature manual="selected" name="OtherGUI"/>
 </configuration>

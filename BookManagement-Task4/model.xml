@@ -9,8 +9,9 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<and abstract="true" mandatory="true" name="BookManagementTask4">
-			<feature mandatory="true" name="OneGUI"/>
-		</and>
+		<alt abstract="true" mandatory="true" name="BookManagementTask4">
+			<feature name="OneGUI"/>
+			<feature name="OtherGUI"/>
+		</alt>
 	</struct>
 </featureModel>
