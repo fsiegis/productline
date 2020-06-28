@@ -56,6 +56,7 @@ public class NewBookPanel
 				index++;
 			}
 		}
+		
 		catch(IllegalStateException e)
 		{
 			System.out.print("Keine Attribute zum Abfragen");
@@ -90,7 +91,6 @@ public class NewBookPanel
             {
             	Book newBook;
             	//System.out.print("\n" + TextFiels[0].getText() + "\n");
-            	//System.out.print("\nNameLabel lange: " + NameLabel.length + "\n");
             	//System.out.print("\nInndex: " + index + "\n");
             	try
             	{
@@ -102,9 +102,11 @@ public class NewBookPanel
 
 	           			try
 	           			{
-	           				for(int iindex = 1; iindex <= index; iindex++)
+	           				for(int iindex = 1; iindex <= attributeList.size(); iindex++)
 	           				{
-	           					newBook.setAtribute(NameLabel[iindex].getText(), TextFiels[iindex].getText());	           					
+	           					newBook.setAtribute(NameLabel[iindex].getText(), TextFiels[iindex].getText());	
+	           	            	System.out.print("\nNameLabel: " + NameLabel[iindex].getText() + "  TextFirled: " + TextFiels[iindex].getText());
+
 	           				}
 	           			}
 	           			catch(IllegalStateException es)

@@ -4,6 +4,8 @@
 	<feature manual="selected" name="OneGUI"/>
 	<feature automatic="unselected" name="OtherGUI"/>
 	<feature manual="selected" name="InfoPanel"/>
-	<feature automatic="selected" name="Attribute"/>
+	<feature automatic="selected" manual="selected" name="Attribute"/>
 	<feature manual="selected" name="Preis"/>
+	<feature manual="selected" name="Coverfarbe"/>
+	<feature manual="selected" name="Genre"/>
 </configuration>

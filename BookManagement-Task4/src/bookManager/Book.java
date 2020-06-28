@@ -73,7 +73,10 @@ public class Book //implements Comparable<Book>
 		{
 			for(Iattribte singleAttribute : attributeList)
 			{
-				bookString = bookString + singleAttribute.getAttributeName() + ": " + singleAttribute.getValue() + "  ";
+				if(singleAttribute.dispOnTable())
+				{
+					bookString = bookString + singleAttribute.getAttributeName() + ": " + singleAttribute.getValue() + "  ";
+				}
 			}
 		}
 		catch(IllegalStateException e)
@@ -100,8 +103,24 @@ public class Book //implements Comparable<Book>
 		
     }
 	public String getAllInfo() {
-		String allInfo = this.name + "\n";
-		return allInfo;
+		String bookString = "";
+		bookString = this.name + "    ";
+		try
+		{
+			for(Iattribte singleAttribute : attributeList)
+			{
+				bookString = bookString + singleAttribute.getAttributeName() + ": " + singleAttribute.getValue() + "    \n";
+			}
+		}
+		catch(IllegalStateException e)
+		{
+			System.out.print("Book.toString(): IllegalStateException: Keine Attribute vorhaben");
+		}
+		catch(NullPointerException ne)
+		{
+			System.out.print("Book.toString(): NullPointerException: Keine Attribute vorhaben");
+		}
+        return bookString;
 	}
 	
 }

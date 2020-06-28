@@ -1,0 +1,5 @@
+<plugin>
+	<interface id="interfaces.Iattribte">
+		<class>Genre</class>
+	</interface>
+</plugin>
