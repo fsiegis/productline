@@ -1,21 +1,20 @@
 package bookManager;
 
-public class Book implements Comparable<Book>
+import java.util.List;
+
+import interfaces.Iattribte;
+
+public class Book //implements Comparable<Book>
 {
 	private String name = "";
-	private double price = -1;
-	private String ISBN = "";
 	private int bookidx = -1;
-	private boolean islend = false;
 
-	public Book(String name)
+	List<Iattribte> attributeList;
+
+	public Book(String name, List<Iattribte> attributeList)
 	{
 		this.name = name;
-	}
-	public Book(String name, double price)
-	{
-		this.name = name;
-		this.price = price;
+		this.attributeList = attributeList;
 	}
 	
 	public void setName(String name)
@@ -26,22 +25,6 @@ public class Book implements Comparable<Book>
 	{
 		return this.name;
 	}
-	public void setPrice(double price)
-	{
-		this.price = price;
-	}
-	public double getPrice()
-	{
-		return this.price;
-	}
-	public void setISBN(String isbn)
-	{
-		this.ISBN = isbn;
-	}
-	public String getISBN()
-	{
-		return this.ISBN;
-	}
 	public int getidx()
 	{
 		return this.bookidx;
@@ -50,26 +33,57 @@ public class Book implements Comparable<Book>
 	{
 		this.bookidx = idx;
 	}
-	public boolean getislend()
+	
+	public void setAtribute(String attribute, String val)
 	{
-		return this.islend;
+		for(Iattribte singleAttribute : attributeList)
+		{
+			if(singleAttribute.getAttributeName() == attribute)
+			{
+				singleAttribute.setValue(val);
+			}
+		}
 	}
-	public void setislend(boolean islend)
+	public String getAttribute(String attribute)
 	{
-		this.islend = islend;
+		for(Iattribte singleAttribute : attributeList)
+		{
+			if(singleAttribute.getAttributeName() == attribute)
+			{
+				return singleAttribute.getValue();
+			}
+		}
+		
+		return null;
 	}
 	
+	
 	@Override
-	public int compareTo(Book compareBook) 
-	{
-		double compareQuantity = compareBook.getPrice();
-		return (int) (this.price - compareQuantity);
-	}
+//	public int compareTo(Book compareBook) 
+//	{
+//		double compareQuantity = compareBook.getPrice();
+//		return (int) (this.price - compareQuantity);
+//	}
 	
  	public String toString()
 	{
 		String bookString = "";
-		bookString = this.name;
+		bookString = this.name + "  ";
+		try
+		{
+			for(Iattribte singleAttribute : attributeList)
+			{
+				bookString = bookString + singleAttribute.getAttributeName() + ": " + singleAttribute.getValue() + "  ";
+			}
+		}
+		catch(IllegalStateException e)
+		{
+			System.out.print("Book.toString(): IllegalStateException: Keine Attribute vorhaben");
+		}
+		catch(NullPointerException ne)
+		{
+			System.out.print("Book.toString(): NullPointerException: Keine Attribute vorhaben");
+		}
         return bookString;
 		// if Price && LendManagement
 //		{

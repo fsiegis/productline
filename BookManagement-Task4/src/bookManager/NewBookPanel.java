@@ -3,6 +3,7 @@ package bookManager;
 import javax.swing.*;
 
 import interfaces.IGUI;
+import interfaces.Iattribte;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,16 +14,21 @@ public class NewBookPanel
 {
 	JPanel bookPanel;
 	JPanel savePanel;
-	JTextField newBookName;
-	JTextField newBookPrice;
+
+	JLabel NameLabel[];
+	JTextField TextFiels[];
+	
 	JButton saveButton;
 	ActionListener listener;
 
-	bookManager.BookManager mainBookManager;
+	BookManager mainBookManager;
 	JFrame gui;
+	List<Iattribte> attributeList;
+	int index = 1;
     
-	public NewBookPanel(bookManager.BookManager mainBookManager, List<IGUI> myGUI)
+	public NewBookPanel(BookManager mainBookManager, List<IGUI> myGUI, List<Iattribte> attributeList)
 	{
+		this.attributeList = attributeList;
 		this.mainBookManager = mainBookManager;
 		this.gui = myGUI.get(0).getFrame("NewBook");
 
@@ -31,11 +37,37 @@ public class NewBookPanel
 		bookPanel = new JPanel();
 		savePanel = new JPanel();
 		
+		NameLabel =  new JLabel[20];
+		TextFiels = new JTextField[20];
 		
-		JLabel NameLabel = new JLabel("Name:");
-		newBookName = new JTextField("Name des neuen Buchens", 15);
-		bookPanel.add(NameLabel);
-		bookPanel.add(newBookName);
+		
+		NameLabel[0] = new JLabel("Name:");
+		TextFiels[0] = new JTextField("Name des neuen Buchens", 15);
+		
+		//System.out.print("Attribute Name: " + attributeList.get(0).getAttributeName());
+		
+		int index = 1;
+		try
+		{
+			for(Iattribte singleAttribute : attributeList)
+			{
+				NameLabel[index] = new JLabel(singleAttribute.getAttributeName());
+				TextFiels[index] = new JTextField("---", 15);
+				index++;
+			}
+		}
+		catch(IllegalStateException e)
+		{
+			System.out.print("Keine Attribute zum Abfragen");
+		}
+		
+		for(int iindex = 0; iindex < index; iindex++)
+		{
+			bookPanel.add(NameLabel[iindex]);
+			bookPanel.add(TextFiels[iindex]);
+		}
+		
+		
 		
 	    saveButton = new JButton("Sichern");
 	    savePanel.add(saveButton);
@@ -56,13 +88,30 @@ public class NewBookPanel
         {
             if(e.getSource() == saveButton)
             {
-            	bookManager.Book newBook;
+            	Book newBook;
+            	//System.out.print("\n" + TextFiels[0].getText() + "\n");
+            	//System.out.print("\nNameLabel lange: " + NameLabel.length + "\n");
+            	//System.out.print("\nInndex: " + index + "\n");
             	try
             	{
             		{
-	           				newBook = new bookManager.Book(newBookName.getText());
-	           				mainBookManager.addBook(newBook);
-	           				gui.dispose();
+	           			newBook = new Book(TextFiels[0].getText(), attributeList);
+	           			mainBookManager.addBook(newBook);
+	           			System.out.print("TextField Text: " + TextFiels[1].getText());
+	           			System.out.print("Index: " + index);
+
+	           			try
+	           			{
+	           				for(int iindex = 1; iindex <= index; iindex++)
+	           				{
+	           					newBook.setAtribute(NameLabel[iindex].getText(), TextFiels[iindex].getText());	           					
+	           				}
+	           			}
+	           			catch(IllegalStateException es)
+	           			{
+	           				System.out.print("Attribute konnten dem Buch nicht eingegeben werden");
+	           			}
+	           			gui.dispose();
 	            	}	
             		//newBook = new bookManager.Book(newBookName.getText(), Double.parseDouble(newBookPrice.getText()));
             	}

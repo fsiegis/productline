@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.*;
 
 import interfaces.IGUI;
+import interfaces.Iattribte;
 import interfaces.Iview;
 import loader.PluginLoader;
 import bookManager.NewBookPanel;
@@ -24,19 +25,20 @@ public class BookManager {
 	
 	List<IGUI> GUIlist;
 	List<Iview> viewList;
+	List<Iattribte> attributeList;
 	
 	BookManager mainBookManager;
 	
 	JButton newBook;
 	JFrame gui;
 	
-	public BookManager(List<IGUI> GUIlist, List<Iview> viewList)
+	public BookManager(List<IGUI> GUIlist, List<Iview> viewList, List<Iattribte> attributeList)
 	{
 		mainBookManager = this;
 		
 		this.GUIlist = GUIlist;
 		this.viewList = viewList;
-		
+		this.attributeList = attributeList;
 		
 		this.gui = GUIlist.get(0).getFrame("BookManager");
 		gui.setVisible(true);
@@ -63,8 +65,9 @@ public class BookManager {
 
 		List<IGUI> myGUI = PluginLoader.load(IGUI.class);
 		List<Iview> myViews = PluginLoader.load(Iview.class);
+		List<Iattribte> myAttributes = PluginLoader.load(Iattribte.class);
 
-		new BookManager(myGUI, myViews);
+		new BookManager(myGUI, myViews, myAttributes);
 	}
 	
 	public void addBook(Book newBook)
@@ -99,7 +102,7 @@ public class BookManager {
         {
             if(e.getSource() == newBook)
             {
-            	new NewBookPanel(mainBookManager, GUIlist);
+            	new NewBookPanel(mainBookManager, GUIlist, attributeList);
             }
         }
     }

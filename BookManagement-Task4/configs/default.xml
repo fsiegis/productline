@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
 	<feature automatic="selected" name="BookManagementTask4"/>
-	<feature automatic="unselected" name="OneGUI"/>
-	<feature manual="selected" name="OtherGUI"/>
+	<feature manual="selected" name="OneGUI"/>
+	<feature automatic="unselected" name="OtherGUI"/>
 	<feature manual="selected" name="InfoPanel"/>
+	<feature automatic="selected" name="Attribute"/>
+	<feature manual="selected" name="Preis"/>
 </configuration>

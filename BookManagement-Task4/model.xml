@@ -13,6 +13,9 @@
 			<feature name="OneGUI"/>
 			<feature name="OtherGUI"/>
 			<feature name="InfoPanel"/>
+			<and abstract="true" name="Attribute">
+				<feature name="Preis"/>
+			</and>
 		</and>
 	</struct>
 	<constraints>
