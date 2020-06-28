@@ -3,4 +3,5 @@
 	<feature automatic="selected" name="BookManagementTask4"/>
 	<feature automatic="unselected" name="OneGUI"/>
 	<feature manual="selected" name="OtherGUI"/>
+	<feature manual="selected" name="InfoPanel"/>
 </configuration>

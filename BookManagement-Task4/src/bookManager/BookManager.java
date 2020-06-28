@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.*;
 
 import interfaces.IGUI;
+import interfaces.Iview;
 import loader.PluginLoader;
 import bookManager.NewBookPanel;
 import bookManager.Book;
@@ -22,17 +23,21 @@ public class BookManager {
 	DefaultListModel<Book> model;
 	
 	List<IGUI> GUIlist;
+	List<Iview> viewList;
 	
 	BookManager mainBookManager;
 	
 	JButton newBook;
 	JFrame gui;
 	
-	public BookManager(List<IGUI> GUIlist)
+	public BookManager(List<IGUI> GUIlist, List<Iview> viewList)
 	{
 		mainBookManager = this;
 		
 		this.GUIlist = GUIlist;
+		this.viewList = viewList;
+		
+		
 		this.gui = GUIlist.get(0).getFrame("BookManager");
 		gui.setVisible(true);
 		
@@ -45,7 +50,11 @@ public class BookManager {
 		ButtonListener listener = new ButtonListener();
 		newBook.addActionListener(listener);
 		
-		
+		for(Iview view : viewList)
+		{
+			controlPanel.add(view.getButton(mainBookManager));
+			
+		}
 		controlPanel.add(newBook);
 		gui.add(controlPanel, BorderLayout.SOUTH);
 	}
@@ -53,8 +62,9 @@ public class BookManager {
 	public static void main(String[] args) throws InterruptedException {
 
 		List<IGUI> myGUI = PluginLoader.load(IGUI.class);
+		List<Iview> myViews = PluginLoader.load(Iview.class);
 
-		new BookManager(myGUI);
+		new BookManager(myGUI, myViews);
 	}
 	
 	public void addBook(Book newBook)
@@ -71,6 +81,16 @@ public class BookManager {
 		
 		newBook.setidx(bookPointer);
 		bookPointer++;
+	}
+	
+	public Book getSelectedBook()
+	{
+		Book oneBook = bookList.getSelectedValue();
+		return oneBook;
+	}
+	public JFrame getFrame(String header)
+	{
+		return GUIlist.get(0).getFrame(header);
 	}
 	
 	class ButtonListener implements ActionListener

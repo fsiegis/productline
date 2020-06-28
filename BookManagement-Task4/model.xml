@@ -9,9 +9,28 @@
 		<graphics key="layoutalgorithm" value="1"/>
 	</properties>
 	<struct>
-		<alt abstract="true" mandatory="true" name="BookManagementTask4">
+		<and abstract="true" mandatory="true" name="BookManagementTask4">
 			<feature name="OneGUI"/>
 			<feature name="OtherGUI"/>
-		</alt>
+			<feature name="InfoPanel"/>
+		</and>
 	</struct>
+	<constraints>
+		<rule>
+			<disj>
+				<conj>
+					<var>OneGUI</var>
+					<not>
+						<var>OtherGUI</var>
+					</not>
+				</conj>
+				<conj>
+					<var>OtherGUI</var>
+					<not>
+						<var>OneGUI</var>
+					</not>
+				</conj>
+			</disj>
+		</rule>
+	</constraints>
 </featureModel>

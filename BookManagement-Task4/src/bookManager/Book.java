@@ -69,6 +69,8 @@ public class Book implements Comparable<Book>
  	public String toString()
 	{
 		String bookString = "";
+		bookString = this.name;
+        return bookString;
 		// if Price && LendManagement
 //		{
 //			bookString = this.name + "    Preis: " + Double.toString(this.price) + "    Buch ist verliehen: " + this.islend;
@@ -81,9 +83,11 @@ public class Book implements Comparable<Book>
 //		{
 //			bookString = this.name + "    Preis: " + Double.toString(this.price);
 
-		bookString = this.name;
-
-        return bookString;
+		
     }
+	public String getAllInfo() {
+		String allInfo = this.name + "\n";
+		return allInfo;
+	}
 	
 }
