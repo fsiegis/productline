@@ -14,3 +14,7 @@ Notizen zu Task 3:
 - Sehr einfach umzusetzende Funktion
 - Problem: Beim Speichern bearbeitet Antenna den Sourcecode (entfernt //@ Kommentare), damit ist die Modularität des Sourcecodes nicht mehr gegeben. Update auf FeatureIDE 3.6.3 hat das "Problem" nicht gelöst.
 - Ansonsten konnten verschiedene Funktionalitätäen (nach manuellem widererstellen der //@ Kommentare) erfolgreich an- und abgewählt weden
+
+Notizen zu Task 4:
+- Mehr Aufwand (Viele Projekt, mehrere Interfaces)
+- Hat etwas gedauert die Architektur richtig aufzubauen (verschiedene Projekte als Features)
