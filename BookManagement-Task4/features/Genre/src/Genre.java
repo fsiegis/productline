@@ -19,5 +19,14 @@ public class Genre implements Iattribte {
 	public String getAttributeName() {
 		return "Genre";
 	}
+	public Iattribte myAttribute()
+	{
+		return new Genre();
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "Genre";
+	}
 
 }

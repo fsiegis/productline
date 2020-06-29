@@ -97,8 +97,6 @@ public class NewBookPanel
             		{
 	           			newBook = new Book(TextFiels[0].getText(), attributeList);
 	           			mainBookManager.addBook(newBook);
-	           			System.out.print("TextField Text: " + TextFiels[1].getText());
-	           			System.out.print("Index: " + index);
 
 	           			try
 	           			{

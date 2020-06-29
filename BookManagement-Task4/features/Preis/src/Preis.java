@@ -17,4 +17,13 @@ public class Preis implements Iattribte {
 	{
 		return "Preis";
 	}
+	public Iattribte myAttribute()
+	{
+		return new Preis();
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "Preis";
+	}
 }

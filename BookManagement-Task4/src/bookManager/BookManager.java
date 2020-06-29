@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.*;
 
 import interfaces.IGUI;
+import interfaces.Ialgorithm;
 import interfaces.Iattribte;
 import interfaces.Iview;
 import loader.PluginLoader;
@@ -26,13 +27,14 @@ public class BookManager {
 	List<IGUI> GUIlist;
 	List<Iview> viewList;
 	List<Iattribte> attributeList;
+	List<Ialgorithm> algorithmList;
 	
 	BookManager mainBookManager;
 	
 	JButton newBook;
 	JFrame gui;
 	
-	public BookManager(List<IGUI> GUIlist, List<Iview> viewList, List<Iattribte> attributeList)
+	public BookManager(List<IGUI> GUIlist, List<Iview> viewList, List<Iattribte> attributeList, List<Ialgorithm> algorithmList)
 	{
 		mainBookManager = this;
 		
@@ -57,6 +59,11 @@ public class BookManager {
 			controlPanel.add(view.getButton(mainBookManager));
 			
 		}
+		for(Ialgorithm algorithm : algorithmList)
+		{
+			controlPanel.add(algorithm.getButton(mainBookManager));
+			
+		}
 		controlPanel.add(newBook);
 		gui.add(controlPanel, BorderLayout.SOUTH);
 	}
@@ -66,8 +73,9 @@ public class BookManager {
 		List<IGUI> myGUI = PluginLoader.load(IGUI.class);
 		List<Iview> myViews = PluginLoader.load(Iview.class);
 		List<Iattribte> myAttributes = PluginLoader.load(Iattribte.class);
+		List<Ialgorithm> algorithms = PluginLoader.load(Ialgorithm.class);
 
-		new BookManager(myGUI, myViews, myAttributes);
+		new BookManager(myGUI, myViews, myAttributes, algorithms);
 	}
 	
 	public void addBook(Book newBook)
@@ -84,6 +92,20 @@ public class BookManager {
 		
 		newBook.setidx(bookPointer);
 		bookPointer++;
+	}
+	public Book[] getBookList()
+	{
+		return books;
+	}
+	
+	public void setBookList(Book[] booklist)
+	{
+		this.books = booklist;
+		model.clear();
+		for(int i = 0; i < books.length; i++)
+		{
+			model.addElement(books[i]);
+		}
 	}
 	
 	public Book getSelectedBook()

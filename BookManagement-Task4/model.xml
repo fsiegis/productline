@@ -18,6 +18,9 @@
 				<feature name="Coverfarbe"/>
 				<feature name="Genre"/>
 			</and>
+			<and abstract="true" name="Algorithms">
+				<feature name="SortAlgorithm"/>
+			</and>
 		</and>
 	</struct>
 	<constraints>

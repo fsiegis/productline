@@ -1,20 +1,29 @@
 package bookManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import interfaces.Iattribte;
 
-public class Book //implements Comparable<Book>
+public class Book implements Comparable<Book>
 {
 	private String name = "";
 	private int bookidx = -1;
 
 	List<Iattribte> attributeList;
+	
+	//List<String> AttributNameList;
+	//List<String> valueList;
 
-	public Book(String name, List<Iattribte> attributeList)
+	public Book(String name, List<Iattribte> generalAttributeList)
 	{
 		this.name = name;
-		this.attributeList = attributeList;
+		//this.attributeList = attributeList;
+		this.attributeList = new ArrayList<Iattribte>();
+		for(Iattribte singleAttribute : generalAttributeList)
+		{
+			attributeList.add(singleAttribute.myAttribute());
+		}
 	}
 	
 	public void setName(String name)
@@ -38,8 +47,11 @@ public class Book //implements Comparable<Book>
 	{
 		for(Iattribte singleAttribute : attributeList)
 		{
-			if(singleAttribute.getAttributeName() == attribute)
+			
+			if(singleAttribute.getName() == attribute)
 			{
+				System.out.print("Val : " +  val);
+				
 				singleAttribute.setValue(val);
 			}
 		}
@@ -48,22 +60,21 @@ public class Book //implements Comparable<Book>
 	{
 		for(Iattribte singleAttribute : attributeList)
 		{
-			if(singleAttribute.getAttributeName() == attribute)
+			if(singleAttribute.getName() == attribute)
 			{
 				return singleAttribute.getValue();
 			}
 		}
-		
-		return null;
-	}
+		return "Fehler "; //valueList.get(idx);
+		}
 	
 	
 	@Override
-//	public int compareTo(Book compareBook) 
-//	{
-//		double compareQuantity = compareBook.getPrice();
-//		return (int) (this.price - compareQuantity);
-//	}
+	public int compareTo(Book compareBook) 
+	{
+		double compareQuantity = Double.parseDouble(compareBook.getAttribute("Preis"));
+		return (int) (Double.parseDouble((this.getAttribute("Preis"))) - compareQuantity);
+	}
 	
  	public String toString()
 	{

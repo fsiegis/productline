@@ -1,0 +1,5 @@
+<plugin>
+	<interface id="interfaces.Ialgorithm">
+		<class>SortAlgorithm</class>
+	</interface>
+</plugin>

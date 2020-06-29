@@ -18,5 +18,14 @@ public class Coverfarbe implements Iattribte {
 	public String getAttributeName() {
 		return "Coverfarbe";
 	}
+	public Iattribte myAttribute()
+	{
+		return new Coverfarbe();
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "Coverfarbe";
+	}
 
 }
