@@ -5,7 +5,7 @@
 	<feature automatic="unselected" name="OtherGUI"/>
 	<feature name="InfoPanel"/>
 	<feature automatic="selected" manual="selected" name="Attribute"/>
-	<feature manual="selected" name="Preis"/>
+	<feature automatic="selected" name="Preis"/>
 	<feature manual="selected" name="Coverfarbe"/>
 	<feature manual="selected" name="Genre"/>
 	<feature automatic="selected" manual="selected" name="Algorithms"/>

@@ -40,5 +40,11 @@
 				</conj>
 			</disj>
 		</rule>
+		<rule>
+			<imp>
+				<var>SortAlgorithm</var>
+				<var>Preis</var>
+			</imp>
+		</rule>
 	</constraints>
 </featureModel>
