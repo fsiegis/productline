@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="BookManagementTask5"/>
+	<feature automatic="selected" name="Book"/>
+	<feature automatic="selected" name="GUI"/>
+	<feature automatic="unselected" name="BasicGUI"/>
+	<feature manual="selected" name="SpecialGUI"/>
+	<feature automatic="selected" name="NewBookPanel"/>
+	<feature name="InfoPanel"/>
+	<feature automatic="selected" manual="selected" name="Attribute"/>
+	<feature name="Genre"/>
+	<feature name="CoverColor"/>
+	<feature automatic="selected" manual="selected" name="Price"/>
+	<feature name="Ranking"/>
+	<feature automatic="selected" manual="selected" name="Algorithm"/>
+	<feature manual="selected" name="PriceSort"/>
+</configuration>
