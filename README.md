@@ -18,3 +18,8 @@ Notizen zu Task 3:
 Notizen zu Task 4:
 - Mehr Aufwand (Viele Projekt, mehrere Interfaces)
 - Hat etwas gedauert die Architektur richtig aufzubauen (verschiedene Projekte als Features)
+
+Notizen zu Task 5:
+- Codewiederholung bei GUIs
+- Mehrmals Probleme beim Update des Feature-Trees/der Configuration (meist gelößt durch Neustart von Eclipse)
+- 
