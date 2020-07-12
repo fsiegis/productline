@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-	<feature name="Task3"/>
-	<feature name="GUI"/>
-	<feature name="InfoPanel"/>
-	<feature name="LocalManagement"/>
-	<feature name="Attribute"/>
-	<feature name="Name"/>
-	<feature name="Price"/>
+	<feature automatic="selected" name="Task3"/>
+	<feature automatic="selected" name="GUI"/>
+	<feature manual="selected" name="InfoPanel"/>
+	<feature automatic="selected" name="LocalManagement"/>
+	<feature automatic="selected" name="Attribute"/>
+	<feature automatic="selected" name="Name"/>
+	<feature manual="selected" name="Price"/>
 	<feature name="Algorithm"/>
 	<feature name="PriceSort"/>
 	<feature name="Marketing"/>

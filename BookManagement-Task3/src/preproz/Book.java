@@ -78,13 +78,13 @@ public class Book implements Comparable<Book>
 //@			bookString = this.name + "    Buch ist verliehen: " + this.islend;
 //@		}
 		// #elif Price && !LendManagement
-//@		{
-//@			bookString = this.name + "    Preis: " + Double.toString(this.price);
-//@		}
-		// #else
 		{
-			bookString = this.name;
+			bookString = this.name + "    Preis: " + Double.toString(this.price);
 		}
+		// #else
+//@		{
+//@			bookString = this.name;
+//@		}
 		// #endif
         return bookString;
     }

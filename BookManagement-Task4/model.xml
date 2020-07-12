@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="BookManagementTask4">
+			<feature name="OneGUI"/>
+			<feature name="OtherGUI"/>
+			<feature name="InfoPanel"/>
+			<and abstract="true" name="Attribute">
+				<feature name="Preis"/>
+				<feature name="Coverfarbe"/>
+				<feature name="Genre"/>
+			</and>
+			<and abstract="true" name="Algorithms">
+				<feature name="SortAlgorithm"/>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<disj>
+				<conj>
+					<var>OneGUI</var>
+					<not>
+						<var>OtherGUI</var>
+					</not>
+				</conj>
+				<conj>
+					<var>OtherGUI</var>
+					<not>
+						<var>OneGUI</var>
+					</not>
+				</conj>
+			</disj>
+		</rule>
+		<rule>
+			<imp>
+				<var>SortAlgorithm</var>
+				<var>Preis</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

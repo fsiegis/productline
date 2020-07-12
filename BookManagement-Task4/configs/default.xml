@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="BookManagementTask4"/>
+	<feature manual="selected" name="OneGUI"/>
+	<feature automatic="unselected" name="OtherGUI"/>
+	<feature name="InfoPanel"/>
+	<feature automatic="selected" manual="selected" name="Attribute"/>
+	<feature automatic="selected" name="Preis"/>
+	<feature manual="selected" name="Coverfarbe"/>
+	<feature manual="selected" name="Genre"/>
+	<feature automatic="selected" manual="selected" name="Algorithms"/>
+	<feature manual="selected" name="SortAlgorithm"/>
+</configuration>
